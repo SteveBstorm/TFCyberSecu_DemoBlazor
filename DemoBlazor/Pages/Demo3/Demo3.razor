@@ -1,0 +1,23 @@
+﻿@page "/demo3"
+<h3>Demo3</h3>
+
+<EditForm class="form-group" Model="MonClient" OnSubmit="Validation">
+    <DataAnnotationsValidator />
+    <div class="form-control">
+        Email : 
+        <InputText type="email" @bind-Value="MonClient.Email" />
+        <ValidationMessage For="() =>MonClient.Email" />
+    </div>
+        
+
+    <div class="form-control">
+        Firstname :
+        <InputText type="text" @bind-Value="MonClient.Firstname" />
+    </div>
+    <button class="btn btn-outline-primary" type="submit">Valider</button>
+    <ValidationSummary />
+</EditForm>
+
+@code {
+
+}

@@ -26,7 +26,6 @@ namespace DemoBlazor.Pages.Exos.Exo1
             Counter = 0;
             CurrentQuestion = QuestionList[Counter];
             Counter++;
-
         }
 
         void Repondre(string resp)
