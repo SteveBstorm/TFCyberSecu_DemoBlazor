@@ -1,0 +1,26 @@
+﻿@page "/demo1"
+
+<h3>Demo1</h3>
+
+@*Binding one-way >> Lecture de valeur*@
+<p>Valeur de myValue : @MyValue</p>
+
+@* Binding Two-Way => Lecture + Ecriture *@
+<input type="number" @bind-value="MyValue" /> 
+
+
+<p>
+    <button class="btn" @onclick="@(() => ajout(2))" disabled="@(MyValue >9)">+</button>
+    <button class="btn" @onclick="retrait">-</button>
+</p>
+@* @for(int i = 0; i<10; i++)
+{
+    <Reutilisable />
+} *@
+
+<hr />
+
+@foreach(string s in maliste)
+{
+    <p>@s <button @onclick="@(() => affiche(s))">click</button></p>
+}
