@@ -1,0 +1,12 @@
+﻿@page "/demo2"
+<link rel="stylesheet" href="../Pages/Demo2/Demo2.razor" />
+<h3 class="toto">Demo2</h3>
+
+<p>L'enfant à envoyé : @InfoFromChildren</p>
+
+<Demo2Bis ValueFromParent="42"
+          MonSuperEvent="ReceiveInfo" />
+
+@code {
+
+}
