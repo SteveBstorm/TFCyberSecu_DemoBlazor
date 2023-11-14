@@ -1,0 +1,13 @@
+﻿<h3>Question</h3>
+
+<p>Bonjour @Pseudo c'est la question @Counter</p>
+<h4>@CurrentQuestion</h4>
+
+<button class="btn btn-outline-success" 
+        @onclick="@(() => Repondre("oui"))">
+        Oui
+    </button>
+<button class="btn btn-outline-danger"
+        @onclick="@(() => Repondre("non"))">
+        Non
+</button>
