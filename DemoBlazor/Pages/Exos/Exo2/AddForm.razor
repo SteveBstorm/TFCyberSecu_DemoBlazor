@@ -1,0 +1,23 @@
+﻿<h3>AddForm</h3>
+
+<EditForm Model="NewArticle" OnValidSubmit="OnSubmit">
+    <DataAnnotationsValidator />
+    <div class="col-form-label-sm">
+        <label class="form-label">Nom de l'article</label>
+        <InputText @bind-Value="NewArticle.Nom" class="form-control" />
+    </div>
+    <div class="col-form-label-sm">
+        <label class="form-label">Prix de l'article</label>
+        <InputNumber @bind-Value="NewArticle.Prix" class="form-control" />
+    </div>
+    <div class="col-form-label-sm">
+        <label class="form-label">Catégorie</label>
+        <InputText @bind-Value="NewArticle.Categorie" class="form-control" />
+    </div>
+    <div class="col-form-label-sm">
+        <label class="form-label">Description</label>
+        <InputText @bind-Value="NewArticle.Description" class="form-control" />
+    </div>
+    <p><ValidationSummary /></p>
+    <button class="btn btn-outline-dark" type="submit">Valider</button>
+</EditForm>

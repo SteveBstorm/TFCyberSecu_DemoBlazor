@@ -1,0 +1,37 @@
+﻿@page "/exo2"
+@using DemoBlazor.Pages.Exos.Exo2.Models;
+<h3>Liste des articles</h3>
+<div class="container">
+    <div class="left">
+        <table class="table table-striped">
+            <tr>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th></th>
+            </tr>
+
+            @foreach(Article a in ArticleList)
+            {
+                <tr>
+                    <td>@a.Nom</td>
+                    <td>@a.Prix €</td>
+                    <td><button class="btn btn-outline-info" @onclick="() => SelectArticle(a.Id)">Détails</button></td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <div>
+        <div>
+            <AddForm NotifyNewArticle="AddArticle" />
+        </div>
+        <hr />
+        <div>
+            @if(Selected != null)
+            {
+                <Detail CurrentArticle="Selected"/>
+            }
+        </div>
+    </div>
+</div>
