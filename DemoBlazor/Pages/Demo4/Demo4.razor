@@ -1,0 +1,21 @@
+﻿@page "/demo4"
+<h3>Demo4</h3>
+<h4>Affichage classique</h4>
+<div style="max-height : 200px; overflow: scroll;">
+    <ul>
+        @foreach (Guid g in guids)
+        {
+            <li>@g</li>
+        }
+    </ul>
+</div>
+
+<hr />
+<h4>Affichage virtualisé</h4>
+<div style="max-height : 200px; overflow: scroll;">
+    <ul>
+        <Virtualize Items="guids" Context="g">
+            <li>@g</li>
+        </Virtualize>
+    </ul>
+</div>

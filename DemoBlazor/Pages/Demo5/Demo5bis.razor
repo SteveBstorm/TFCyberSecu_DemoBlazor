@@ -1,0 +1,11 @@
+﻿<h3>Demo5bis</h3>
+
+@code {
+    [Parameter]
+    public int ParameterValue { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("On parameter Set : " + ParameterValue);
+    }
+}
