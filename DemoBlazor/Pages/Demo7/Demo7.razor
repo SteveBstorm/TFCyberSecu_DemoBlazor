@@ -1,14 +1,24 @@
 ﻿@page "/demo7"
+
 <h3>Demo7</h3>
-Message : <input type="text" @bind-value="Message" />
+<div class="form-control">
+    Ustilisateur : <input type="text" @bind-value="Sender" />
+</div>
+<div class="form-control">
+    Message : <input type="text" @bind-value="Message" />
+</div>
 <button class="btn" @onclick="SendMessage" >Envoi global</button>
 <button class="btn" @onclick="JoinGroup">Rejoindre Groupe </button>
 <button class="btn" @onclick="SendToGroup">Envoi groupe </button>
 
-<ul>
-    @foreach(string s in Messages)
+<ul class="list">
+    @foreach(Message m in Messages)
     {
-        <li>@s</li>
+        <li class="list-item">
+            <p class="@(@m.IsPrivate ? "text-info" : "text-black")">
+                <strong>@m.Sender</strong> @m.SendingDate.ToLongTimeString() : @m.Content
+            </p>
+        </li>
     }
 </ul>
 @code {

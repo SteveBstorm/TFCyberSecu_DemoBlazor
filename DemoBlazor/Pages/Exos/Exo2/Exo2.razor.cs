@@ -1,11 +1,13 @@
 ﻿using DemoBlazor.Pages.Exos.Exo2.Models;
 using DemoBlazor.Pages.Exos.Exo2.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace DemoBlazor.Pages.Exos.Exo2
 {
     public partial class Exo2
     {
+        private HubConnection _hubConnection;
         public List<Article> ArticleList { get; set; }
         //public Article Selected { get; set; }
 
@@ -20,6 +22,13 @@ namespace DemoBlazor.Pages.Exos.Exo2
 
         protected override async Task OnInitializedAsync()
         {
+            _hubConnection = new HubConnectionBuilder()
+                .WithUrl("https://localhost:7130/articlehub").Build();
+
+            _hubConnection.On("newArticle", async () => { await LoadData(); });
+
+            await _hubConnection.StartAsync();
+
             await LoadData();
         }
 
