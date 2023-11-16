@@ -1,0 +1,16 @@
+﻿@page "/demo7"
+<h3>Demo7</h3>
+Message : <input type="text" @bind-value="Message" />
+<button class="btn" @onclick="SendMessage" >Envoi global</button>
+<button class="btn" @onclick="JoinGroup">Rejoindre Groupe </button>
+<button class="btn" @onclick="SendToGroup">Envoi groupe </button>
+
+<ul>
+    @foreach(string s in Messages)
+    {
+        <li>@s</li>
+    }
+</ul>
+@code {
+
+}

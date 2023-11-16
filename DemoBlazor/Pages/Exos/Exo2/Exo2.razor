@@ -28,9 +28,14 @@
         </div>
         <hr />
         <div>
-            @if(Selected != null)
+            @*@if(Selected != null)
             {
                 <Detail CurrentArticle="Selected"/>
+            }*@
+            @if (SelectedId != 0)
+            {
+                @*<Detail CurrentArticle="Selected" />*@
+                <Detail CurrentId="SelectedId" />
             }
         </div>
     </div>
